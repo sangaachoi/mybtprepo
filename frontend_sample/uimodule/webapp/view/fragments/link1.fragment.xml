@@ -1,0 +1,10 @@
+<core:FragmentDefenition
+xmlns="sap.m">
+
+    <VBox>
+        <Text text='1' />
+        <Text text='1' />
+        <Text text='1' />
+    </VBox>
+
+</core:FragmentDefenition>

@@ -1,0 +1,8 @@
+<core:FragmentDefenition
+xmlns="sap.m">
+
+    <VBox>
+        <CheckBox text="Information" valueState="Information" />
+    </VBox>
+
+</core:FragmentDefenition>

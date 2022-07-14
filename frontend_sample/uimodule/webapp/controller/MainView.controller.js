@@ -1,11 +1,12 @@
 sap.ui.define(
   ["./BaseController",
-    "sap/ui/model/json/JSONModel"
+    "sap/ui/model/json/JSONModel",
+    "sap/ui/core/Fragment"
   ],
   /**
    * @param {typeof sap.ui.core.mvc.Controller} Controller
    */
-  function (Controller, JSONModel) {
+  function (Controller, JSONModel, Fragment) {
     "use strict";
 
     return Controller.extend("gitpg.myapp.controller.MainView", {
@@ -32,6 +33,21 @@ sap.ui.define(
         //   }
         // )
       },
+      onPress:function(oEvent){
+        let sIdRaiseEvent = oEvent.getSource().getId();
+
+        let sIdLink1 = this.getView().byId('link1').getId();
+        let sIdLink2 = this.getView().byId('link2').getId();
+
+        debugger;
+
+        if (sIdRaiseEvent === sIdLink1) {
+
+        } else if (sIdRaiseEvent === sIdLink2) {
+
+        }
+      }
+
     });
   }
 );

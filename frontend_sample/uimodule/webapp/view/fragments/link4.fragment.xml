@@ -3,7 +3,7 @@ xmlns="sap.m"
 xmlns:core="sap.ui.core">
 
     <VBox>
-        <CheckBox text="Information" valueState="HTML" />
+        <CheckBox text="HTML"/>
     </VBox>
 
 </core:FragmentDefinition>

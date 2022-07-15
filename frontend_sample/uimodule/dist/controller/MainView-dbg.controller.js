@@ -1,11 +1,12 @@
 sap.ui.define(
   ["./BaseController",
-    "sap/ui/model/json/JSONModel"
+    "sap/ui/model/json/JSONModel",
+    "sap/ui/core/Fragment"
   ],
   /**
    * @param {typeof sap.ui.core.mvc.Controller} Controller
    */
-  function (Controller, JSONModel) {
+  function (Controller, JSONModel, Fragment) {
     "use strict";
 
     return Controller.extend("gitpg.myapp.controller.MainView", {
@@ -32,6 +33,47 @@ sap.ui.define(
         //   }
         // )
       },
+
+      onPress:function(oEvent){
+        var sIdRaiseEvent = oEvent.getSource().getId();
+
+        let sIdLink1 = this.getView().byId('link1').getId();
+        let sIdLink2 = this.getView().byId('link2').getId();
+
+        debugger;
+
+        var pFragment ;
+
+        if (sIdRaiseEvent === sIdLink1) {
+          pFragment = Fragment.load(
+            {
+              name : "gitpg.myapp.view/fragments/link1",
+              type : "XML",
+              id : "link1Fragment",
+              controller : this
+            }
+          )
+
+        } else if (sIdRaiseEvent === sIdLink2) {
+          pFragment = Fragment.load(
+            {
+              name : "gitpg.myapp.view/fragments/link2",
+              type : "XML",
+              id : "link2Fragment",
+              controller : this
+            }
+          )
+        }
+
+        pFragment.then(function (oView){
+          var oMyExtend = this.getView().byId("myExtend");
+          
+          oMyExtend.destroyItem(); //myExtend 내부 Item 밑에 다 지워버려
+          oMyExtend.addItem(oView); //Item 추가해
+        }.bind(this));
+
+      }
+
     });
   }
 );

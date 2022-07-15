@@ -1,4 +1,4 @@
-<core:FragmentDefinition
+<core:FragmentDefenition
 xmlns="sap.m"
 xmlns:core="sap.ui.core">
 
@@ -8,4 +8,4 @@ xmlns:core="sap.ui.core">
         <Text text='1' />
     </VBox>
 
-</core:FragmentDefinition>
+</core:FragmentDefenition>

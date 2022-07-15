@@ -1,14 +1,43 @@
-<mvc:View controllerName="gitpg.myapp.controller.MainView" xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m" xmlns:tnt="sap.tnt">
+<mvc:View controllerName="gitpg.myapp.controller.MainView" 
+xmlns:mvc="sap.ui.core.mvc" 
+displayBlock="true" 
+xmlns="sap.m" 
+xmlns:l="sap.ui.layout"
+xmlns:tnt="sap.tnt">
   <Page id="page" title="{i18n>title}">
     <content>
       
-      <Title level="H1" titleStyle="H3">
-        <Link id="link1" text="드디어 된다...." target="_blank" press='.onPress' />
-      </Title>
+      <l:VerticalLayout>
 
-      <Title level="H1" titleStyle="H3">
-        <Link id="link2" text="도대체 왜 되는 것임" target="_blank" press='.onPress' />
-      </Title>
+        <Title level="H1" titleStyle="H1">
+          <Link id="link0" text="WEB" target="_blank" press=".onPress" />
+        </Title>
+
+        <Title level="H1" titleStyle="H3">
+          <Link id="link1" text="1. Create" target="_blank" press=".onPress" />
+        </Title>
+
+        <Title level="H1" titleStyle="H3">
+          <Link id="link2" text="2.CSS" target="_blank" press=".onPress" />
+        </Title>
+
+        <Title level="H1" titleStyle="H3">
+          <Link id="link3" text="3.File List" target="_blank" press=".onPress" />
+        </Title>
+
+        <Title level="H1" titleStyle="H3">
+          <Link id="link4" text="4. HTML" target="_blank" press=".onPress" />
+        </Title>
+
+        <Title level="H1" titleStyle="H3">
+          <Link id="link5" text="5. Java Script" target="_blank" press=".onPress" />
+        </Title>
+
+        <HBox id="myExtend">
+          <!-- 추가될 화면을 여기에 렌더링 -->
+        </HBox>
+
+      </l:VerticalLayout>
 
       <!-- <tnt:NavigationList id="navigationList" width="320px" selectedKey="Files">
         <tnt:items>

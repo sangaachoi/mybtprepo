@@ -143,8 +143,21 @@ let app = http.createServer(function (request, response) {
 
     } else if (sPath === '/files') {
         let adirmyfilesList = fs.readdirSync('./myfiles');
+
         if (adirmyfilesList) {
+            
             let sFilesList = JSON.stringify(adirmyfilesList);
+
+            // JSON
+            // 데이터 표현 양식
+            // 백엔드에서 데이터 주고 받고 할 때 JSON 형식으로 변환해서 많이 사용함
+            // (자바 스크립트는 JSON을 내부적인 함수로 가지고 있음!)
+
+            // stringify ( )
+            // () 안에 자바스크립트 파일 넣어주면 JSON 형식(문자열)로 표현해서 담아줌 
+
+            
+            // --보안
             let origin = request.headers.origin;
 
             response.setHeader('Content-Type' , 'text/html; charset=utf-8',)
@@ -153,6 +166,7 @@ let app = http.createServer(function (request, response) {
                 response.setHeader('Access-Control-Allow-Origin', origin);
                 response.setHeader('Access-Control-Allow-Headers', oCors.header )
             }
+            // --보안
             response.writeHead(200);
             response.end(sFilesList);
         } else {

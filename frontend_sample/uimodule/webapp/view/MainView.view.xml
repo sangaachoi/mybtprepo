@@ -8,7 +8,7 @@ xmlns:tnt="sap.tnt">
     <content>
 
       <Title level="H1" titleStyle="H1">
-        <Link id="link0" text="WEB" target="_blank" press=".onPress" />
+        <Link id="link0" text="WEB..." target="_blank" press=".onPress" />
       </Title>
 
 
@@ -21,7 +21,7 @@ xmlns:tnt="sap.tnt">
          위의 부분은 List의 items를 바인딩하겠다고 명시한 것 -->
     <!-- item='{myData>/}' 요 부분은 실제 바인딩되는 데이터 자체를 정의-->
 
-        <ActionListItem id="link" text="{myData>listName}"></ActionListItem>
+        <ActionListItem id="link2" text="{myData>listName}"></ActionListItem>
         <!-- ActionListItem의 text라는 속성은 위의 list에서 바인딩한 myData 배열 각각의 한 줄 한 줄의 fieldname이라는 속성을 가지고 만들겠다 -->
         <!-- text="{myData>listName}"
              이 부분은 바인딩된 데이터 중에서 액션 리스트 아이템에 어떤 영역을 매핑할 것인지를 정의 -->

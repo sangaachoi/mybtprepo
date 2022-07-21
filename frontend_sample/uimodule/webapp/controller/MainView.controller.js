@@ -50,26 +50,26 @@ sap.ui.define(
         // )
         
       
-        // $.ajax(
-        //   'http://localhost:8921/files', //첫 번째 파라미터 (이 주소로 요청 보냄)
-        //   //     'https://port-8921-nodejs-quaint-lizard-lgx0920328747.codeanyapp.com/files'
-        //   {
-               // method, success, error 이 세 개는 기계적으로 쓴다고 생각하자 
-        //     method: "GET",
-        //     success : function (...params) { //위의 소스 읽기 성공하면 여기 탐
-        //       let Success = JSON.parse(params[0]);
+        $.ajax(
+          'http://localhost:8921/files', //첫 번째 파라미터 (이 주소로 요청 보냄)
+          //     'https://port-8921-nodejs-quaint-lizard-lgx0920328747.codeanyapp.com/files'
+          {
+              // method, success, error이 세 개는 기계적으로 쓴다고 생각하자 
+            method: "GET",
+            success : function (...params) { //위의 소스 읽기 성공하면 여기 탐
+              let Success = JSON.parse(params[0]);
 
-        //       //myData
-        //       let oJson = new JSONModel(Success);
+              //myData
+              let oJson = new JSONModel(Success);
 
-        //       this.getView().setModel(oJson,'myData')
-        //         debugger;
-        //     }.bind(this),
-        //     error : function (...params) { //호출 끝나고나서 에러났으면 이 함수를 콜백
-        //       debugger;
-        //     }
-        //   }
-        // )
+              this.getView().setModel(oJson,'myLink')
+                debugger;
+            }.bind(this),
+            error : function (...params) { //호출 끝나고나서 에러났으면 이 함수를 콜백
+              debugger;
+            }
+          }
+        )
 
 
       },
@@ -87,7 +87,6 @@ sap.ui.define(
         debugger;
 
         let pFragment ;
-
 
         if (sIdRaiseEvent === sIdLink0) {
           pFragment = Fragment.load(

@@ -55,7 +55,7 @@ sap.ui.define(
           'http://localhost:8921/files', //첫 번째 파라미터 (이 주소로 요청 보냄)
           //     'https://port-8921-nodejs-quaint-lizard-lgx0920328747.codeanyapp.com/files'
           {
-              // method, success, error이 세 개는 기계적으로 쓴다고 생각하자 
+              // method, success, error이 세 개는 기계적으로 쓴다고 생각 
             method: "GET", //HTTP  요청 메서드 (GET, POST 쓸 수 있음)
             success : function (...params) { //위의 소스 읽기 성공하면 여기 탐
               let Success = JSON.parse(params[0]);

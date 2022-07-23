@@ -1,11 +1,17 @@
 <core:FragmentDefinition
 xmlns="sap.m"
-xmlns:core="sap.ui.core">
+xmlns:core="sap.ui.core"
+xmlns:mvc="sap.ui.core.mvc">
 
     <VBox>
-        <Text text='1' />
-        <Text text='2' />
-        <Text text='3' />
+    <Title
+        titleStyle="H1"
+        text="File List" />
+     <List items="{myData>/}">
+        <items>
+            <ActionListItem id="Link" text="{myData>}" press=".onPress"></ActionListItem>
+        </items>
+    </List>
     </VBox>
 
 </core:FragmentDefinition>

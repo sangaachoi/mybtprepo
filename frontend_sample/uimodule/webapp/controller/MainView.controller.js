@@ -13,26 +13,27 @@ sap.ui.define(
     return Controller.extend("gitpg.myapp.controller.MainView", {
       onInit: function () {
 
-        let oJson = new JSONModel(
-        // 생성자를 통해 로드한 제이슨을 제이슨 객체로 만듦
-        // 객체 변수 이름은 oJson
-        // JSONModel 생성자를 만들 때 인자를 줘야 하고, 생성자 함수에 줄 인자는 실제 JSON 포맷이어야 한다.
-          {
-            myArr1 : [
-              { listName : '1. Create' },
-              { listName : '2.CSS' },
-              { listName : '3.File List' },
-              { listName : '4. HTML' },
-              { listName : '5. Java Script' }
-            ],
-            myArr2 : [
-              { listName : 'choisanga2' },
-              { listName : 'leehyunjoo2' }
-            ]
-          }
-        );
+        // let oJson = new JSONModel(
+        // // 생성자를 통해 로드한 제이슨을 제이슨 객체로 만듦
+        // // 객체 변수 이름은 oJson
+        // // JSONModel 생성자를 만들 때 인자를 줘야 하고, 생성자 함수에 줄 인자는 실제 JSON 포맷이어야 한다.
+        //   {
+        //     myArr1 : [
+        //       { listName : '1. Create' },
+        //       { listName : '2.CSS' },
+        //       { listName : '3.File List' },
+        //       { listName : '4. HTML' },
+        //       { listName : '5. Java Script' }
+        //     ],
+        //     myArr2 : [
+        //       { listName : 'choisanga2' },
+        //       { listName : 'leehyunjoo2' },
+        //       { listName : 'SeoJuYeoon222'}
+        //     ]
+        //   }
+        // );
 
-        this.getView().setModel(oJson, 'myData')
+        // this.getView().setModel(oJson, 'myFileList')
         // 위에서 만들어진 json을 이 앱의 myData란 이름으로 등록하는 과정
         // getView()된 결과를 통해 View를 가지고 오고,
         // 그 뷰의 setModel을 통해 oJson을 myData란 이름을 가진 모델로 등록한 것
@@ -55,15 +56,16 @@ sap.ui.define(
           //     'https://port-8921-nodejs-quaint-lizard-lgx0920328747.codeanyapp.com/files'
           {
               // method, success, error이 세 개는 기계적으로 쓴다고 생각하자 
-            method: "GET",
+            method: "GET", //HTTP  요청 메서드 (GET, POST 쓸 수 있음)
             success : function (...params) { //위의 소스 읽기 성공하면 여기 탐
               let Success = JSON.parse(params[0]);
 
+
               //myData
               let oJson = new JSONModel(Success);
+              this.getView().setModel(oJson,'myData')
 
-              this.getView().setModel(oJson,'myLink')
-                debugger;
+              debugger;
             }.bind(this),
             error : function (...params) { //호출 끝나고나서 에러났으면 이 함수를 콜백
               debugger;
